@@ -27,4 +27,4 @@ jobs:
     - name:
       run: KO_DOCKER_REPO=ghcr.io/dlorenc/hello-ko ko publish --bare github.com/dlorenc/hello-ko
     - name:
-      run: COSIGN_EXPERIMENTAL=1 cosign sign ghcr.io/dlorenc/hello-ko
+      run: COSIGN_EXPERIMENTAL=1 cosign sign -a git_sha=$GITHUB_SHA ghcr.io/dlorenc/hello-ko
